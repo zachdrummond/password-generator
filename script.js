@@ -31,42 +31,40 @@ function generatePassword() {
   } else {
     //WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters
     var lowercaseBoolean = confirm("Would you like to include lowercase letters in your password?");
-    console.log(lowercaseBoolean);
-
-    var uppercaseBoolean = confirm("Would you like to include uppercase letters in your password?");
-    console.log(uppercaseBoolean);
-
-    var numbersBoolean = confirm("Would you like to include numbers in your password?");
-    console.log(numbersBoolean);
-    
-    var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
-    console.log(specialCharactersBoolean);
-
-    if(lowercaseBoolean === false && uppercaseBoolean === false && numbersBoolean === false && specialCharactersBoolean === false){
-      alert("Cannot generate a password with no letters, numbers, or special characters.");
-    }
-    else{
+    if(lowercaseBoolean){
       for(var i=0; i<passwordLength; i++){
         realPassword += lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
         console.log(realPassword);
       }
+    }
 
+    var uppercaseBoolean = confirm("Would you like to include uppercase letters in your password?");
+    if(uppercaseBoolean){
       for(var i=0; i<passwordLength; i++){
         realPassword += uppercaseArray[Math.floor(Math.random() * uppercaseArray.length)];
         console.log(realPassword);
       }
+    }
 
+    var numbersBoolean = confirm("Would you like to include numbers in your password?");
+    if(numbersBoolean) {
       for(var i=0; i<passwordLength; i++){
         realPassword += numbersArray[Math.floor(Math.random() * numbersArray.length)];
         console.log(realPassword);
       }
-
+    }
+    
+    var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
+    if(specialCharactersBoolean){
       for(var i=0; i<passwordLength; i++){
         realPassword += specialCharactersArray[Math.floor(Math.random() * specialCharactersArray.length)];
         console.log(realPassword);
       }
     }
 
+    if(lowercaseBoolean === false && uppercaseBoolean === false && numbersBoolean === false && specialCharactersBoolean === false){
+      alert("Cannot generate a password with no letters, numbers, or special characters.");
+    }
   }
 
   return realPassword;
