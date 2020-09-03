@@ -3,6 +3,7 @@
 -Added if else statement to restrict user input
 -Added prompt messages to ask the user for input
 -Created arrays with lowercase and uppercase letters, numbers, and special characters
+-Added if statement if the user cancels everything
 
 # 03 JavaScript: Password Generator
 

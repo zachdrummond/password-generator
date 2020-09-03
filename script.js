@@ -5,7 +5,6 @@ var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"
 var numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharactersArray = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-console.log(specialCharactersArray.length);
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -41,6 +40,11 @@ function generatePassword() {
     
     var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
     console.log(specialCharactersBoolean);
+
+    if(lowercaseBoolean === false && uppercaseBoolean === false && numbersBoolean === false && specialCharactersBoolean === false){
+      alert("Cannot generate a password with no letters, numbers, or special characters.");
+    }
+
   }
 
   return "THIS IS NOT MY FINAL PASSWORD!"; //TODO: Generate a real password and replace the return string with a real password string.
