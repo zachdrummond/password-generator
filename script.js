@@ -7,19 +7,31 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-function generatePassword(){
+function generatePassword() {
   //All your code goes here.
-  var passwordLength = prompt("Enter a password length between 8 and 128 characters");
-  
-  if(passwordLength < 8 || passwordLength > 128 || passwordLength !== typeof Number){
-    alert("You must enter a password length between 8 and 128 characters.")
+
+  // WHEN prompted for the length of the password THEN I choose a length of at least 8 characters and no more than 128 characters
+  var passwordLength = parseFloat(prompt("Enter a password length between 8 and 128 characters"));
+
+  if (
+    passwordLength < 8 ||
+    passwordLength > 128
+  ) {
+    alert("You must enter a password length between 8 and 128 characters.");
+  } else {
+    // WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters
+    var lowercase = confirm("Would you like to include lowercase letters in your password?");
+
+    var uppercase = confirm("Would you like to include uppercase letters in your password?");
+
+    var numbers = confirm("Would you like to include numbers in your password?");
+    
+    var specialCharacters = confirm("Would you like to include special characters in your password?");
   }
 
-  
-  return "THIS IS NOT MY FINAL PASSWORD!" //TODO: Generate a real password and replace the return string with a real password string.
+  return "THIS IS NOT MY FINAL PASSWORD!"; //TODO: Generate a real password and replace the return string with a real password string.
 }
 
 // Add event listener to generate button
@@ -31,10 +43,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
+
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
 // WHEN all prompts are answered
