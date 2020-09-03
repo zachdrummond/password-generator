@@ -5,6 +5,8 @@
 -Created arrays with lowercase and uppercase letters, numbers, and special characters
 -Added if statement if the user cancels everything
 -Created a for loop that iterates through the arrays to add their elements to the password string
+-Created if statements for each password generator condition with for loops
+-Created a function for the for loops to make the program faster
 
 # 03 JavaScript: Password Generator
 

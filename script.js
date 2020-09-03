@@ -21,6 +21,16 @@ function generatePassword() {
   var passwordLength = parseFloat(prompt("Enter a password length between 8 and 128 characters"));
   console.log(passwordLength);
 
+  function faster(boolean, array){
+    var fasterPassword = "";
+    if(boolean){
+      for(var i=0; i<passwordLength; i++){
+        fasterPassword += array[Math.floor(Math.random() * array.length)];
+      }
+    }
+    return fasterPassword;
+  }
+
   //If the user presses cancel or a letter or a word - Password length must be a number.
   if (
     isNaN(passwordLength) ||
@@ -31,36 +41,16 @@ function generatePassword() {
   } else {
     //WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters
     var lowercaseBoolean = confirm("Would you like to include lowercase letters in your password?");
-    if(lowercaseBoolean){
-      for(var i=0; i<passwordLength; i++){
-        realPassword += lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
-        console.log(realPassword);
-      }
-    }
+    realPassword+=faster(lowercaseBoolean, lowercaseArray);
 
     var uppercaseBoolean = confirm("Would you like to include uppercase letters in your password?");
-    if(uppercaseBoolean){
-      for(var i=0; i<passwordLength; i++){
-        realPassword += uppercaseArray[Math.floor(Math.random() * uppercaseArray.length)];
-        console.log(realPassword);
-      }
-    }
+    realPassword+=faster(uppercaseBoolean, uppercaseArray);
 
     var numbersBoolean = confirm("Would you like to include numbers in your password?");
-    if(numbersBoolean) {
-      for(var i=0; i<passwordLength; i++){
-        realPassword += numbersArray[Math.floor(Math.random() * numbersArray.length)];
-        console.log(realPassword);
-      }
-    }
+    realPassword+=faster(numbersBoolean, numbersArray);
     
     var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
-    if(specialCharactersBoolean){
-      for(var i=0; i<passwordLength; i++){
-        realPassword += specialCharactersArray[Math.floor(Math.random() * specialCharactersArray.length)];
-        console.log(realPassword);
-      }
-    }
+    realPassword+=faster(specialCharactersBoolean, specialCharactersArray);
 
     if(lowercaseBoolean === false && uppercaseBoolean === false && numbersBoolean === false && specialCharactersBoolean === false){
       alert("Cannot generate a password with no letters, numbers, or special characters.");
