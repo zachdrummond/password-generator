@@ -14,21 +14,28 @@ function generatePassword() {
 
   // WHEN prompted for the length of the password THEN I choose a length of at least 8 characters and no more than 128 characters
   var passwordLength = parseFloat(prompt("Enter a password length between 8 and 128 characters"));
+  console.log(passwordLength);
 
+  //If the user presses cancel or a letter or a word - Password length must be a number.
   if (
+    isNaN(passwordLength) ||
     passwordLength < 8 ||
     passwordLength > 128
   ) {
     alert("You must enter a password length between 8 and 128 characters.");
   } else {
-    // WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters
-    var lowercase = confirm("Would you like to include lowercase letters in your password?");
+    //WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters
+    var lowercaseBoolean = confirm("Would you like to include lowercase letters in your password?");
+    console.log(lowercaseBoolean);
 
-    var uppercase = confirm("Would you like to include uppercase letters in your password?");
+    var uppercaseBoolean = confirm("Would you like to include uppercase letters in your password?");
+    console.log(uppercaseBoolean);
 
-    var numbers = confirm("Would you like to include numbers in your password?");
+    var numbersBoolean = confirm("Would you like to include numbers in your password?");
+    console.log(numbersBoolean);
     
-    var specialCharacters = confirm("Would you like to include special characters in your password?");
+    var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
+    console.log(specialCharactersBoolean);
   }
 
   return "THIS IS NOT MY FINAL PASSWORD!"; //TODO: Generate a real password and replace the return string with a real password string.

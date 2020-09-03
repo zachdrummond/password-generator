@@ -1,4 +1,7 @@
 # password-generator
+-Added confirm messages to ask the user for input
+-Added if else statement to restrict user input
+-Added prompt messages to ask the user for input
 
 # Unit 02 CSS and Bootstrap Homework: Responsive Portfolio
 
