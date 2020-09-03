@@ -50,6 +50,21 @@ function generatePassword() {
         realPassword += lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
         console.log(realPassword);
       }
+
+      for(var i=0; i<passwordLength; i++){
+        realPassword += uppercaseArray[Math.floor(Math.random() * uppercaseArray.length)];
+        console.log(realPassword);
+      }
+
+      for(var i=0; i<passwordLength; i++){
+        realPassword += numbersArray[Math.floor(Math.random() * numbersArray.length)];
+        console.log(realPassword);
+      }
+
+      for(var i=0; i<passwordLength; i++){
+        realPassword += specialCharactersArray[Math.floor(Math.random() * specialCharactersArray.length)];
+        console.log(realPassword);
+      }
     }
 
   }

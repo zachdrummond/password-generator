@@ -4,7 +4,7 @@
 -Added prompt messages to ask the user for input
 -Created arrays with lowercase and uppercase letters, numbers, and special characters
 -Added if statement if the user cancels everything
--Created a for loop that iterates through lowercaseArray to add lowercase letters to the password string
+-Created a for loop that iterates through the arrays to add their elements to the password string
 
 # 03 JavaScript: Password Generator
 
