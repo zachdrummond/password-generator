@@ -4,6 +4,7 @@ var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
 var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharactersArray = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var realPassword = "";
 
 // Write password to the #password input
 function writePassword() {
@@ -44,10 +45,16 @@ function generatePassword() {
     if(lowercaseBoolean === false && uppercaseBoolean === false && numbersBoolean === false && specialCharactersBoolean === false){
       alert("Cannot generate a password with no letters, numbers, or special characters.");
     }
+    else{
+      for(var i=0; i<passwordLength; i++){
+        realPassword += lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
+        console.log(realPassword);
+      }
+    }
 
   }
 
-  return "THIS IS NOT MY FINAL PASSWORD!"; //TODO: Generate a real password and replace the return string with a real password string.
+  return realPassword;
 }
 
 // Add event listener to generate button
