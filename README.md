@@ -12,6 +12,7 @@
 -Created an object out of the variables
 -Changed confirm messages to delete an array out of the object if the user doesn't want to include those characters
 -Added a for loop to create a random password based on the length from the user input.
+-Added comments
 
 # 03 JavaScript: Password Generator
 

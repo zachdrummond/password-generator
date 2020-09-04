@@ -1,9 +1,11 @@
+/* Styles Everything */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Resets the margin and takes up the whole page*/
 html,
 body,
 .wrapper {
@@ -12,11 +14,13 @@ body,
   padding: 0;
 }
 
+
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
 
+/* Styles the container */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -30,6 +34,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Styles the password box */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -72,6 +77,7 @@ header {
   clear: both;
 }
 
+/* Styles the Password Button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -97,6 +103,7 @@ button[disabled] {
   float: right;
 }
 
+/* Styles the text area */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +125,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* Helps the page be responsive on any screen */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
