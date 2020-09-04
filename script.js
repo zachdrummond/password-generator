@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var realPassword = "";
 
 // Write password to the #password input
 function writePassword() {
@@ -30,6 +29,7 @@ function generatePassword() {
     alert("You must enter a password length between 8 and 128 characters.");
   } else {
     
+    var realPassword = "";
     var passwordObject = {
       lowercaseArray : ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
       uppercaseArray : ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
@@ -60,12 +60,13 @@ function generatePassword() {
     if(Object.keys(passwordObject).length === 0){
       alert("Cannot generate a password with no letters, numbers, or special characters.");
     }
-
-    // var randomArray = chooseRandomArray(passwordObject);
-    // console.log(randomArray);
-    // console.log(randomArray[Math.floor(Math.random() * randomArray.length)]);
-
-    
+    else{
+      
+      for(var i = 0; i < passwordLength; i++){
+        var randomArray = chooseRandomArray(passwordObject);
+        realPassword+=randomArray[Math.floor(Math.random() * randomArray.length)]
+      } 
+    }
   }
 
   return realPassword;
@@ -73,10 +74,3 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page

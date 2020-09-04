@@ -10,7 +10,8 @@
 -Created a function to select a random array
 -Created way to select a random element in the array
 -Created an object out of the variables
--Recreated code using 
+-Changed confirm messages to delete an array out of the object if the user doesn't want to include those characters
+-Added a for loop to create a random password based on the length from the user input.
 
 # 03 JavaScript: Password Generator
 
