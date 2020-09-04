@@ -7,6 +7,8 @@
 -Created a for loop that iterates through the arrays to add their elements to the password string
 -Created if statements for each password generator condition with for loops
 -Created a function for the for loops to make the program faster
+-Created a function to select a random array
+-Created way to select a random element in the array
 
 # 03 JavaScript: Password Generator
 

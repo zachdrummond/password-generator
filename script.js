@@ -1,9 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialCharactersArray = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var passwordObject = {
+  lowercaseArray : ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+  uppercaseArray : ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+  numbersArray : ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  specialCharactersArray : [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+}
+
 var realPassword = "";
 
 // Write password to the #password input
@@ -21,7 +24,7 @@ function generatePassword() {
   var passwordLength = parseFloat(prompt("Enter a password length between 8 and 128 characters"));
   console.log(passwordLength);
 
-  function faster(boolean, array){
+  function addToPassword(boolean, array){
     var fasterPassword = "";
     if(boolean){
       for(var i=0; i<passwordLength; i++){
@@ -39,18 +42,26 @@ function generatePassword() {
   ) {
     alert("You must enter a password length between 8 and 128 characters.");
   } else {
-    //WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters
+
     var lowercaseBoolean = confirm("Would you like to include lowercase letters in your password?");
-    realPassword+=faster(lowercaseBoolean, lowercaseArray);
+    realPassword+=addToPassword(lowercaseBoolean, lowercaseArray);
 
     var uppercaseBoolean = confirm("Would you like to include uppercase letters in your password?");
-    realPassword+=faster(uppercaseBoolean, uppercaseArray);
+    realPassword+=addToPassword(uppercaseBoolean, uppercaseArray);
 
     var numbersBoolean = confirm("Would you like to include numbers in your password?");
-    realPassword+=faster(numbersBoolean, numbersArray);
+    realPassword+=addToPassword(numbersBoolean, numbersArray);
     
     var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
-    realPassword+=faster(specialCharactersBoolean, specialCharactersArray);
+    realPassword+=addToPassword(specialCharactersBoolean, specialCharactersArray);
+
+    function chooseRandomArray (object) {
+      var passwordObjectKeysArray = Object.keys(object); //Creates an array of strings of the object's keys.
+      return object[passwordObjectKeysArray[Math.floor(Math.random() * passwordObjectKeysArray.length)]]; //Returns an array of random properties.
+    };
+    var randomArray = chooseRandomArray(passwordObject);
+    console.log(randomArray);
+    console.log(randomArray[Math.floor(Math.random() * randomArray.length)]);
 
     if(lowercaseBoolean === false && uppercaseBoolean === false && numbersBoolean === false && specialCharactersBoolean === false){
       alert("Cannot generate a password with no letters, numbers, or special characters.");
