@@ -75,7 +75,7 @@ function generatePassword() {
 
   // If the program ended, leave the password blank
   if(realPassword === undefined){
-    realPassword = " ";
+    realPassword = "Your Secure Password";
     console.log(realPassword);
   }
 
