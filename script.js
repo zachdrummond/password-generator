@@ -1,7 +1,7 @@
-// Assignment Code
+// Assigns generateBtn to the button on the app
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// A function that writes the new password in the text area
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -9,23 +9,27 @@ function writePassword() {
   passwordText.value = password;
 }
 
-function chooseRandomArray (object) {
-  var passwordObjectKeysArray = Object.keys(object); //Creates an array of strings of the object's keys.
-  return object[passwordObjectKeysArray[Math.floor(Math.random() * passwordObjectKeysArray.length)]]; //Returns an array of random properties.
-};
+// A function that chooses a random array in an object
+function chooseRandomArray(object) {
+  //Creates an array of strings of the object's keys.
+  var passwordObjectKeysArray = Object.keys(object);
+  //Returns an array of random properties from the object.
+  return object[
+    passwordObjectKeysArray[
+      Math.floor(Math.random() * passwordObjectKeysArray.length)
+    ]
+  ];
+}
 
+// A function that creates a new password
 function generatePassword() {
-  //All your code goes here.
+  // Allows the user to choose a password length
+  var passwordLength = parseFloat(
+    prompt("Enter a password length between 8 and 128 characters")
+  );
 
-  // WHEN prompted for the length of the password THEN I choose a length of at least 8 characters and no more than 128 characters
-  var passwordLength = parseFloat(prompt("Enter a password length between 8 and 128 characters"));
-
-  //If the user presses cancel or a letter or a word - Password length must be a number.
-  if (
-    isNaN(passwordLength) ||
-    passwordLength < 8 ||
-    passwordLength > 128
-  ) {
+  //If the user presses cancel or a letter or a word, the program will stop.
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     alert("You must enter a password length between 8 and 128 characters.");
   } else {
     
@@ -37,35 +41,44 @@ function generatePassword() {
       specialCharactersArray : [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
     }
 
-    var lowercaseBoolean = confirm("Would you like to include lowercase letters in your password?");
-    if(!lowercaseBoolean){
+    var lowercaseBoolean = confirm(
+      "Would you like to include lowercase letters in your password?"
+    );
+    if (!lowercaseBoolean) {
       delete passwordObject.lowercaseArray;
     }
 
-    var uppercaseBoolean = confirm("Would you like to include uppercase letters in your password?");
-    if(!uppercaseBoolean){
+    var uppercaseBoolean = confirm(
+      "Would you like to include uppercase letters in your password?"
+    );
+    if (!uppercaseBoolean) {
       delete passwordObject.uppercaseArray;
     }
 
-    var numbersBoolean = confirm("Would you like to include numbers in your password?");
-    if(!numbersBoolean){
+    var numbersBoolean = confirm(
+      "Would you like to include numbers in your password?"
+    );
+    if (!numbersBoolean) {
       delete passwordObject.numbersArray;
     }
 
-    var specialCharactersBoolean = confirm("Would you like to include special characters in your password?");
-    if(!specialCharactersBoolean){
+    var specialCharactersBoolean = confirm(
+      "Would you like to include special characters in your password?"
+    );
+    if (!specialCharactersBoolean) {
       delete passwordObject.specialCharactersArray;
     }
 
-    if(Object.keys(passwordObject).length === 0){
-      alert("Cannot generate a password with no letters, numbers, or special characters.");
-    }
-    else{
-      
-      for(var i = 0; i < passwordLength; i++){
+    if (Object.keys(passwordObject).length === 0) {
+      alert(
+        "Cannot generate a password with no letters, numbers, or special characters."
+      );
+    } else {
+      for (var i = 0; i < passwordLength; i++) {
         var randomArray = chooseRandomArray(passwordObject);
-        realPassword+=randomArray[Math.floor(Math.random() * randomArray.length)]
-      } 
+        realPassword +=
+          randomArray[Math.floor(Math.random() * randomArray.length)];
+      }
     }
   }
 
