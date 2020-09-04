@@ -73,6 +73,12 @@ function generatePassword() {
     }
   }
 
+  // If the program ended, leave the password blank.
+  if(realPassword === undefined){
+    realPassword = " ";
+    console.log(realPassword);
+  }
+
   return realPassword;
 }
 
