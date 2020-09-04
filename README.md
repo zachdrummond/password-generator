@@ -9,6 +9,8 @@
 -Created a function for the for loops to make the program faster
 -Created a function to select a random array
 -Created way to select a random element in the array
+-Created an object out of the variables
+-Recreated code using 
 
 # 03 JavaScript: Password Generator
 
