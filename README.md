@@ -8,7 +8,7 @@
 * [Credits](#Credits)
 
 ## Description
-This is a app that generates a random password between 8 and 128 characters using lowercase and uppercase letters, numbers, and special characters. As technology advances, and hackers become more skilled, there is a greater need for more secure passwords. This app allows the user to customize their own password based on length and character preference.
+This is an app that generates a random password between 8 and 128 characters using lowercase and uppercase letters, numbers, and special characters. As technology advances, and hackers become more skilled, there is a greater need for more secure passwords. This app allows the user to customize their own password based on length and character preference.
 
 This app was designed using mainly JavaScript.
 
@@ -34,16 +34,16 @@ This app was designed using mainly JavaScript.
 
 ## App Preview
 ### *Main Page*
-![Screenshot](PasswordGenerator.png)
+![Screenshot](images/PasswordGenerator.png)
 
 ### *Generate Password*
-![Screenshot](PasswordGenerator2.png)
+![Screenshot](images/PasswordGenerator2.png)
 
 ### *Options*
-![Screenshot](PasswordGenerator3.png)
+![Screenshot](images/PasswordGenerator3.png)
 
 ### *Result*
-![Screenshot](PasswordGenerator4.png)
+![Screenshot](images/PasswordGenerator4.png)
 
 ## Links
 * Website: https://zachdrummond.github.io/password-generator/
