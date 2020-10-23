@@ -15,24 +15,9 @@ This is an app that generates a random password between 8 and 128 characters usi
 * GitHub Repository: https://github.com/zachdrummond/password-generator
 
 ## Design Elements
-### *JavaScript*
-* Clean User Interface
-* Tested for Errors
-* Mobile Responsive
-* Dynamically Updated HTML and CSS
-* Logical Code Structure
-* Sequential Order
-* Document Object Model Manipulation
-* Objects
-* Arrays
-* Methods
-* Global and Local Variables
-* Functions
-* Event Listeners
-* if...else Statements
-* for Loops
-* Prompt, Confirm, and Alert Messages
-* Comments
+* JavaScript
+* HTML
+* CSS
 
 ## App Preview
 ### *Main Page*
